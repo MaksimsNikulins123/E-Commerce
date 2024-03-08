@@ -1,0 +1,36 @@
+@use '../../../../_css/queries.scss' as *;
+
+  .movingBannerContainer {  
+    overflow: hidden;
+    max-width: 100%;
+    
+  }
+  .movingBannerWrapper { 
+    display:  flex;
+    width: 200%;
+ 
+    animation: moveBanner 18s linear infinite;
+  }
+  .movingBannerItem{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    margin: 12px auto;
+    width: 100%;
+    font-size: 0.6875rem;
+    line-height: 1.7;
+    color: var(--color-white-500);
+    white-space: nowrap;   
+  }
+
+  @keyframes moveBanner {
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(-50%);
+    }
+       
+  }
+

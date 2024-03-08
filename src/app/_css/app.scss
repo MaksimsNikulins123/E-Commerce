@@ -4,9 +4,10 @@
 @import "./theme.scss";
 
 :root {
-  --base: 24px;
-  --font-body: sy'Jost', sans-serif;
+  --base: 0.875rem;
+  --font-body: 'Jost', sans-serif;
   --font-jost: 'Jost', sans-serif;
+  --font-nanito: 'Nunito', sans-serif;
 
   --gutter-h: 180px;
   --block-padding: 120px;
@@ -45,7 +46,7 @@ body,
 }
 
 body {
-  font-family: var(--font-jost);
+  font-family: var(--font-nanito);
   margin: 0;
   padding: 0;
   color: var(--color-dark-500);
@@ -109,7 +110,13 @@ ol {
 }
 
 a {
-  color: var(--color-dark-500);
+  // color: var(--color-dark-500);
+  // color: var(--color-white-500);
+  font-weight: 400;
+  font-size: var(--base);
+  font-style: normal;
+  
+  
 
   &:focus {
     opacity: .8;

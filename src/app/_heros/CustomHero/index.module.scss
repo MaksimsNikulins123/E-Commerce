@@ -1,0 +1,114 @@
+@import '../../_css/queries.scss';
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  @include small-break {
+    margin: 0;
+  }
+}
+
+.heroWrapper {
+  background-color: var(--color-dark-50);
+  width: 100%;
+  max-height: 884px;
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: revert;
+  background-repeat: no-repeat;
+
+  @include small-break {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.heroTextBox {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15% var(--gutter-h);
+  width: 100%;
+  flex-wrap: wrap;
+
+  @include mid-break {
+    padding: 10% 30px;
+  }
+
+  @include small-break {
+    padding: 50px 30px;
+  }
+
+  h2 {
+    font-size: 70px;
+    margin: 32px 0;
+
+    @include mid-break {
+      font-size: 48px;
+      margin: 24px 0;
+      white-space: wrap;
+    }
+
+    @include small-break {
+      width: 70%;
+      font-size: 36px;
+      margin: 8px 0;
+    }
+  }
+
+  p {
+    font-size: 3.25rem;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-family: Nunito, sans-serif;
+
+    @include mid-break {
+      font-size: 24px;
+    }
+
+    @include small-break {
+      font-size: 18px;
+    }
+  }
+  a {
+    font-size: 3.25rem;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+
+    @include mid-break {
+      font-size: 24px;
+    }
+
+    @include small-break {
+      font-size: 18px;
+    }
+  }
+}
+
+.links {
+  background-color: rgba(213, 189, 187, 1);
+  border: 2px solid rgb(213, 189, 187);
+  list-style: none;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--base) * 1);
+  &:hover {
+    background-color: rgba(213, 189, 187, 0.1);
+    -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -ms-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+  }
+
+  & > * {
+    margin: calc(var(--base) / 2);
+  }
+}

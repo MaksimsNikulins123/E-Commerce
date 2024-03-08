@@ -1,17 +1,41 @@
+@use '../../../_css/queries.scss' as *;
+
 .header {
-    padding: 36px 0;
+    position: relative;  
+}
+
+.movingBanner{
+    background-color: rgb(171 187 188);
 }
 
 .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: calc(var(--base) / 2) var(--base);
+    position: absolute;
+    top:0px;
+    background-color: rgb(247 227 211);
+    padding: 34px 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    
+    a, svg{
+        color: var(--color-white-500);
+        z-index: 1; 
+        stroke: var(--color-white-500); 
+        fill: var(--color-white-500); 
+    }
+    
+   
 }
 
-.logo {
-    width: 170px;
+.changeLinkColor{
+    a, svg{
+        z-index: 0; 
+        color: var(--color-dark-500);
+        stroke: var(--color-dark-500); 
+        fill: var(--color-dark-500); 
+     }
+     
 }
 
 .hide {

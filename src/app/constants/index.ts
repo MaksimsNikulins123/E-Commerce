@@ -45,4 +45,12 @@ export const inclusions = [
   ]
   
   export const noHeaderFooterUrls = ['/create-account', '/login', '/recover-password']
+  export const changeHeaderLinkColor = ['/collections', '/sale', '/rent', '/blog', '/aboutus', '/faq', '/contacts']
+
+  export const languages = [
+      { value: 'option1', label: 'English' },
+      { value: 'option2', label: 'Latviešu' },
+      { value: 'option3', label: 'Deutsch' }
+
+  ]
   
