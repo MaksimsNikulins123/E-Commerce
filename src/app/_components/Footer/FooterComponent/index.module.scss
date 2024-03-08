@@ -1,13 +1,37 @@
 @use '../../../_css/queries.scss' as *;
 
 .footer {
-  padding: 30px 0;
-  background-color: var(--theme-elevation-1000);
-  color: var(--theme-elevation-0);
+  padding: 4rem 0;
+  background-color: rgb(247, 227, 211);
+  color: rgb(39, 39, 39);
+  // background-color: var(--theme-elevation-1000);
+  // color: var(--theme-elevation-0);
 
   @include small-break {
     padding: calc(var(--base) * 2) 0;
   }
+}
+
+.container {
+  margin: 0 3rem;
+}
+
+.wrapper {
+  gap: 4rem;
+  display: grid;
+}
+.blockList {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.newsletters{
+  flex-basis: 33.3333%;
+ svg {
+    max-width: 150px;
+    height: auto;
+    // stroke: var(--color-dark-500); 
+    fill: var(--color-dark-500);
+ }
 }
 
 

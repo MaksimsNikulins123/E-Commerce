@@ -3,16 +3,16 @@
 import React from 'react'
 import { Header } from '../../../../payload/payload-types'
 import { Gutter } from '../../Gutter'
-// import Link from 'next/link'
 
-import classes from './index.module.scss'
-// import Image from 'next/image'
+
 import { HeaderNav } from './Nav'
 import { changeHeaderLinkColor, noHeaderFooterUrls } from '../../../constants'
 import { usePathname } from 'next/navigation'
 import { HeaderSecondaryNav }  from './HeaderSecondaryNav'
 import Logo from './Logo'
 import MovingBanner from './MovingBanner'
+
+import classes from './index.module.scss'
 
 
 const HeaderComponent = ({ header }: { header: Header }) => {
