@@ -3,7 +3,7 @@
 import React from 'react'
 
 
-import { inclusions, noHeaderFooterUrls } from '../../../constants'
+import { noHeaderFooterUrls } from '../../../constants'
 import { usePathname } from 'next/navigation'
 import { Gutter } from '../../Gutter'
 import LogoIcon from "../../../../../public/piku.svg"
@@ -13,6 +13,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Footer, Media } from '../../../../payload/payload-types'
 import { Button } from '../../Button'
+import FooterForm from './FooterForm'
+import FooterMenu from './FooterMenu'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
 
@@ -35,93 +37,20 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
 
             <div className={classes.blockList}>
               <div className={classes.newsletters}>
-                <Gutter>
-                <LogoIcon />
-                  
-                  {/* <ul className={classes.inclusions}>
-                    {inclusions.map(inclusion => (
-                      <li key={inclusion.title}>
-                        <Image
-                          src={inclusion.icon}
-                          alt={inclusion.title}
-                          width={36}
-                          height={36}
-                          className={classes.icon}
-                        />
-
-                        <h5 className={classes.title}>
-                          {inclusion.title}
-                        </h5>
-                        <p>{inclusion.description}</p>
-                      </li>
-                    ))}
-                  </ul> */}
-                </Gutter>
+                <div className={classes.newslettersBlock}>
+                  <LogoIcon />
+                  <FooterForm />
+                </div>
               </div>
               <div className={classes.menu}>
-                <Gutter>
-                  <ul className={classes.inclusions}>
-                    {inclusions.map(inclusion => (
-                      <li key={inclusion.title}>
-                        <Image
-                          src={inclusion.icon}
-                          alt={inclusion.title}
-                          width={36}
-                          height={36}
-                          className={classes.icon}
-                        />
-
-                        <h5 className={classes.title}>
-                          {inclusion.title}
-                        </h5>
-                        <p>{inclusion.description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </Gutter>
+                <FooterMenu />
               </div>
               <div className={classes.menu}>
-                <Gutter>
-                  <ul className={classes.inclusions}>
-                    {inclusions.map(inclusion => (
-                      <li key={inclusion.title}>
-                        <Image
-                          src={inclusion.icon}
-                          alt={inclusion.title}
-                          width={36}
-                          height={36}
-                          className={classes.icon}
-                        />
-
-                        <h5 className={classes.title}>
-                          {inclusion.title}
-                        </h5>
-                        <p>{inclusion.description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </Gutter>
+                block 3
               </div>
               <div className={classes.text}>
                 <Gutter>
-                  <ul className={classes.inclusions}>
-                    {inclusions.map(inclusion => (
-                      <li key={inclusion.title}>
-                        <Image
-                          src={inclusion.icon}
-                          alt={inclusion.title}
-                          width={36}
-                          height={36}
-                          className={classes.icon}
-                        />
-
-                        <h5 className={classes.title}>
-                          {inclusion.title}
-                        </h5>
-                        <p>{inclusion.description}</p>
-                      </li>
-                    ))}
-                  </ul>
+                  block4
                 </Gutter>
               </div>
             </div>

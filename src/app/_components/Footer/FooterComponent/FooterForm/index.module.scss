@@ -1,0 +1,81 @@
+@use '../../../../_css/queries.scss' as *;
+
+.footerFormContainer {
+    display: grid;
+    grid-gap: 1.5rem;
+    p{
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+}
+.footerForm {
+    display: grid;
+    align-content: start;
+    max-width: 400px;
+    position: relative;
+    input{
+        height: calc(3.125rem + 0.625rem);
+        font-size: 100%;
+        appearance: none;
+    }
+    
+}
+.formInput {
+    width: 100%;
+    background: transparent;
+    border-radius: 0;
+    border-width: 1px;
+    border-color: rgb(180, 175, 175) ;
+    border-style: solid;
+    padding: 16px 20px 0 20px;
+}
+// .formInputFocused {
+//     border: 1px solid rgb(180, 175, 175)
+// }
+.formLabel{
+    position: absolute;
+    top: 0;
+    margin-left: 20px;
+    height: calc(3.125rem + 0.625rem);
+    opacity: 0.5;
+    align-items: center;
+    display: grid;
+
+}
+.formLabelFocused {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 12px;
+    opacity: 0.4;
+  }
+.submitButton {
+    
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 1.25rem;
+    
+    button{
+        cursor: pointer;
+        display: grid; 
+        width: 1.5rem;
+        height: 1.5rem;
+        background: rgb(204, 199, 199);
+        place-items: center;
+        border: none;
+        border-radius: 9999px;
+        transition: all .2s ease-in-out;
+    }
+    :hover {
+        background: var(--color-dark-500);
+        transition: all .2s ease-in-out;
+        svg {
+            stroke: rgb(204, 199, 199);
+        }
+    }
+}
+.inputContainer {
+    position: relative;
+  }
+  

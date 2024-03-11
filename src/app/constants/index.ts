@@ -53,4 +53,38 @@ export const inclusions = [
       { value: 'option3', label: 'Deutsch' }
 
   ]
+
+  export const footerMenu = [
+    {
+      id: 1,
+      title: 'ABOUT US',
+      url: '/pages/about-us'
+    },
+    {
+      id: 2,
+      title: 'CONTACT US',
+      url: '/pages/contact'
+    },
+    {
+      id: 3,
+      title: 'PRODUCTION TIME AND DELIVERY',
+      url: '/pages/production-time-and-delivery'
+    },
+    {
+      id: 4,
+      title: 'RETURNS AND REFUNDS',
+      url: '/pages/returns-and-refunds'
+    },
+    {
+      id: 5,
+      title: 'FAQ',
+      url: '/pages/faq'
+    },
+    {
+      id: 6,
+      title: 'POLICIES',
+      url: '/pages/policies'
+    },
+      
+  ]
   

@@ -1,0 +1,27 @@
+@use '../../../../_css/queries.scss' as *;
+
+
+.footerMenu {
+    display: grid;
+    grid-gap: 1.5rem;
+    flex-shrink: 0;
+    p {
+        font-weight: 700;
+    }
+    ul {
+        display: grid;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        a{
+            color: inherit;
+            text-decoration: inherit;
+            opacity: 0.5;
+            &:hover {
+                opacity: 0.9;
+                transition: 0.2s ease-in-out;    
+            }
+        }
+    }
+}
