@@ -503,6 +503,8 @@ export interface Header {
 }
 export interface Footer {
   id: string;
+  subscribe: string;
+  impactMessage: string;
   copyright: string;
   navItems?:
     | {

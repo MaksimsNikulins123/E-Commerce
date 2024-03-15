@@ -7993,6 +7993,8 @@ type HeaderUpdateDocAccess {
 }
 
 type Footer {
+  subscribe: String!
+  impactMessage: String!
   copyright: String!
   navItems: [Footer_NavItems!]
   updatedAt: DateTime
@@ -8198,10 +8200,58 @@ type footerDocAccess {
 }
 
 type FooterDocAccessFields {
+  subscribe: FooterDocAccessFields_subscribe
+  impactMessage: FooterDocAccessFields_impactMessage
   copyright: FooterDocAccessFields_copyright
   navItems: FooterDocAccessFields_navItems
   updatedAt: FooterDocAccessFields_updatedAt
   createdAt: FooterDocAccessFields_createdAt
+}
+
+type FooterDocAccessFields_subscribe {
+  create: FooterDocAccessFields_subscribe_Create
+  read: FooterDocAccessFields_subscribe_Read
+  update: FooterDocAccessFields_subscribe_Update
+  delete: FooterDocAccessFields_subscribe_Delete
+}
+
+type FooterDocAccessFields_subscribe_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_subscribe_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_subscribe_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_subscribe_Delete {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_impactMessage {
+  create: FooterDocAccessFields_impactMessage_Create
+  read: FooterDocAccessFields_impactMessage_Read
+  update: FooterDocAccessFields_impactMessage_Update
+  delete: FooterDocAccessFields_impactMessage_Delete
+}
+
+type FooterDocAccessFields_impactMessage_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_impactMessage_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_impactMessage_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_impactMessage_Delete {
+  permission: Boolean!
 }
 
 type FooterDocAccessFields_copyright {
@@ -11688,10 +11738,58 @@ type footerAccess {
 }
 
 type FooterFields {
+  subscribe: FooterFields_subscribe
+  impactMessage: FooterFields_impactMessage
   copyright: FooterFields_copyright
   navItems: FooterFields_navItems
   updatedAt: FooterFields_updatedAt
   createdAt: FooterFields_createdAt
+}
+
+type FooterFields_subscribe {
+  create: FooterFields_subscribe_Create
+  read: FooterFields_subscribe_Read
+  update: FooterFields_subscribe_Update
+  delete: FooterFields_subscribe_Delete
+}
+
+type FooterFields_subscribe_Create {
+  permission: Boolean!
+}
+
+type FooterFields_subscribe_Read {
+  permission: Boolean!
+}
+
+type FooterFields_subscribe_Update {
+  permission: Boolean!
+}
+
+type FooterFields_subscribe_Delete {
+  permission: Boolean!
+}
+
+type FooterFields_impactMessage {
+  create: FooterFields_impactMessage_Create
+  read: FooterFields_impactMessage_Read
+  update: FooterFields_impactMessage_Update
+  delete: FooterFields_impactMessage_Delete
+}
+
+type FooterFields_impactMessage_Create {
+  permission: Boolean!
+}
+
+type FooterFields_impactMessage_Read {
+  permission: Boolean!
+}
+
+type FooterFields_impactMessage_Update {
+  permission: Boolean!
+}
+
+type FooterFields_impactMessage_Delete {
+  permission: Boolean!
 }
 
 type FooterFields_copyright {
@@ -12525,6 +12623,8 @@ enum Header_NavItems_Link_ReferenceRelationshipInputRelationTo {
 }
 
 input mutationFooterInput {
+  subscribe: String!
+  impactMessage: String!
   copyright: String!
   navItems: [mutationFooter_NavItemsInput]
   updatedAt: String

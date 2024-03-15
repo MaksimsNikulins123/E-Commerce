@@ -9,6 +9,18 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
+      name: 'subscribe',
+      label: 'Subscribe',
+      type: 'text',
+      required: true
+    },
+    {
+      name: 'impactMessage',
+      label: 'Impact message',
+      type: 'text',
+      required: true
+    },
+    {
       name: 'copyright',
       label: 'Copyright',
       type: 'text',

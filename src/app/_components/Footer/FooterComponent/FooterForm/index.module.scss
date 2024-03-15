@@ -4,8 +4,11 @@
     display: grid;
     grid-gap: 1.5rem;
     p{
-        font-size: 1.75rem;
+        font: var( --base) / 1.6;
         line-height: 1.2;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.0em;
     }
 }
 .footerForm {
@@ -28,6 +31,9 @@
     border-color: rgb(180, 175, 175) ;
     border-style: solid;
     padding: 16px 20px 0 20px;
+    &:focus{
+        outline: none; 
+    }
 }
 // .formInputFocused {
 //     border: 1px solid rgb(180, 175, 175)
@@ -44,10 +50,13 @@
 }
 .formLabelFocused {
     position: absolute;
-    top: 0px;
-    left: 10px;
-    font-size: 12px;
+    margin-left: 20px;
+    top: 10px;
+    // left: 10px;
+    font-size: 16px;
     opacity: 0.4;
+    transform: scale(.65) translateY(calc(-1 * 1rem));
+    transition: transform .3s ease-in-out;
   }
 .submitButton {
     
@@ -55,6 +64,7 @@
     position: absolute;
     transform: translateY(-50%);
     right: 1.25rem;
+    
     
     button{
         cursor: pointer;
@@ -66,6 +76,9 @@
         border: none;
         border-radius: 9999px;
         transition: all .2s ease-in-out;
+        &:focus{
+            outline: none; 
+        }
     }
     :hover {
         background: var(--color-dark-500);

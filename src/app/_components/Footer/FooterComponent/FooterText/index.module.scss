@@ -1,0 +1,13 @@
+@use '../../../../_css/queries.scss' as *;
+
+.footerTextContainer{
+    display: grid;
+    gap: 1.5rem;
+    p{
+        font-weight: 700;
+    }
+}
+.footerTextWrapper {
+    color: rgb(39, 39, 39);
+    opacity: 0.5;
+}

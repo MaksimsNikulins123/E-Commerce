@@ -7,18 +7,19 @@ import classes from './index.module.scss'
 
 const Logo = () => {
     return (
-        <div className={classes.logo}>
-            <Link
-                href="/"
-            >
-                <LogoIcon
-                    alt='logo'
-                    width={140}
-                    height={40}
-                />
-            </Link>
+            <div className={classes.logo}>
+                <Link
+                    href="/"
+                >
+                    <LogoIcon
+                        alt='logo'
+                        width={140}
+                        height={40}
+                    />
+                </Link>
 
-        </div>
+            </div>
+
 
     )
 }

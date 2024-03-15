@@ -54,6 +54,30 @@ export const inclusions = [
 
   ]
 
+
+
+
+//FOOTER__________________________________________________________________
+
+export const footerSubscribe = [
+  { 
+    name: 'subscribe',
+    label: 'Subscribe',
+    type: 'text',
+    required: true
+  }
+]
+
+export const footerImpactMessage = [
+  { 
+    id:1,
+    language: 'English',
+    imageURL: '/',
+    text: 'Mersy is powered by 100% renewable electricity.',
+    popUpMessage: 'Mercy’s 100% renewable electricity commitment includes the electricity used by the data centers that host Mersy.com, the Sell on Mersy app, and the Mersy app, as well as the electricity that powers Mersy’s global offices and employees working remotely from home in the US.'
+  }
+]
+
   export const footerMenu = [
     {
       id: 1,
@@ -87,4 +111,56 @@ export const inclusions = [
     },
       
   ]
+
+  export const footerProducts = [
+    {
+      id: 1,
+      title: 'LIGHT LETTERS',
+      url: '/collections/marquee-letters'
+    },
+    {
+      id: 2,
+      title: 'WOODEN BLOCKS WITH LETTERS',
+      url: '/collections/wooden-blocks-with-letters'
+    },
+    {
+      id: 3,
+      title: 'DIY KITS',
+      url: '/collections/diy-kits'
+    },
+    {
+      id: 4,
+      title: 'CLOUD NIGHT LIGHT',
+      url: '/collections/cloud-nightlight'
+    },
+    {
+      id: 5,
+      title: 'LIGHT BALLOONS',
+      url: '/collections/balloon-light'
+    },
+    {
+      id: 6,
+      title: 'LIGHT RAINBOWS',
+      url: '/collections/light-rainbows'
+    },
+    {
+      id: 7,
+      title: 'WOODEN ALPHABET PUZZLE',
+      url: '/collections/wooden-alphabet-puzzle'
+    },
+    {
+      id: 8,
+      title: 'LIGHT ANIMALS',
+      url: '/collections/light-animals'
+    },
+  ]
+
+  export const footerText = [
+    {
+      id:1,
+      content: 'Founded in Latvia in 2015, PIKU specializes in designing and manufacturing of interior design and lighting solutions.We love to style and create beautifully designed, durable and functional products with a touch of the traditions of craftsmanship.'
+    }
+  ]
+
+  
   

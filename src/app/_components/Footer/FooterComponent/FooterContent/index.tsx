@@ -1,16 +1,14 @@
 import React from 'react'
 
-import { footerMenu } from '../../../../constants'
-
 import classes from './index.module.scss'
 import Link from 'next/link'
 
-const FooterMenu = () => {
+const FooterContent = ({ title, content }) => {
     return (
-        <div className={classes.footerMenu}>
-            <p>MENU</p>
+            <div className={classes.footerMenu}>
+                <p>{title}</p>
                 <ul>
-                    {footerMenu.map(({ id, title, url }) => {
+                    {content.map(({ id, title, url }) => {
                         return (
                             <li key={id.toString()}>
                                 <Link
@@ -26,4 +24,4 @@ const FooterMenu = () => {
     )
 }
 
-export default FooterMenu
+export default FooterContent

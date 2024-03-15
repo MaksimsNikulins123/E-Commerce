@@ -11,42 +11,36 @@ const FooterForm = () => {
 
     const handleFocus = () => {
         setIsFocused(true);
-      };
-    
+    };
+
     const handleBlur = () => {
         inputValue ? setIsFocused(true) : setIsFocused(false)
-        
-      };
+
+    };
 
     return (
         <div className={classes.footerFormContainer}>
             <p>Sign up for new stories and personal offers</p>
+            <form className={classes.footerForm}>
+                <input
+                    className={classes.formInput}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    type='email'
+                    autoComplete='e-mail'
+                >
 
-            <form 
-           
-            className={classes.footerForm}>
-                <input 
-                className={classes.formInput}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onChange = {(e)=> setInputValue(e.target.value)} 
-                type='email'
-                autoComplete='e-mail'
-                >
-                
                 </input>
-                <label
-                    className={isFocused ? classes.formLabelFocused : classes.formLabel}
-                    placeholder=''
-                >
+                <label className={isFocused ? classes.formLabelFocused : classes.formLabel} placeholder=''>
                     E-Mail
                 </label>
-                <div className={classes.submitButton}> 
+                <div className={classes.submitButton}>
                     <button type="submit">
                         <ArrowRightIcon
-                        className={classes.arrowRightIcon} 
-                        width={5}
-                        height={8}/>
+                            className={classes.arrowRightIcon}
+                            width={5}
+                            height={8} />
                     </button>
                 </div>
             </form>

@@ -16,6 +16,8 @@ query Header {
 
 export const FOOTER = `
   Footer {
+    subscribe
+    impactMessage
     copyright
     navItems {
       link ${LINK_FIELDS({ disableAppearance: true })}

@@ -10,17 +10,19 @@
     }
     ul {
         display: grid;
-        gap: 0.75rem;
+        grid-gap: 0.65rem;
         margin: 0;
         padding: 0;
-        list-style: none;
+        
         a{
             color: inherit;
             text-decoration: inherit;
             opacity: 0.5;
+            font-weight: 400;
+            // font-size: 15px;
             &:hover {
                 opacity: 0.9;
-                transition: 0.2s ease-in-out;    
+                transition: 0.1s ease-in-out;    
             }
         }
     }

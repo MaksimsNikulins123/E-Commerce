@@ -1,0 +1,82 @@
+@use '../../../../_css/queries.scss' as *;
+
+.subscribe {
+    background: var(--color-footer-blue-500);
+    padding-bottom: 18px;
+    text-align: center;
+}
+.title {
+    padding: 18px;
+}
+.formContainer {
+    display: flex;
+    justify-content:center;
+    
+    @include small-break {
+
+      }
+
+      
+   
+}
+.form {
+    position: relative;
+  }
+
+  .input {
+    background-color: var(--color-footer-gray-500);
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    border: 2px;
+    border: var(--color-footer-gray-500);
+    width: 350px;
+    border-radius: 9999px;
+    &:focus {
+        outline: none;
+        border: 2px;
+        border: var(--color-footer-gray-300);
+    }
+    
+    
+   
+    @include large-break {
+        width: 300px;
+            }
+            @include mid-break {
+                width: 250px;
+                    }
+                    @include small-break {
+                        width: 200px;
+                            }
+                        @include extra-small-break {
+                            width: 150px;
+                                }
+            
+  }
+
+.button {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    padding: 0;
+    border-left: 1px solid var(--color-footer-gray-300);
+    border-top: 0;
+    border-right: 1px solid var(--color-footer-gray-500);
+    border-bottom: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: calc(40px + 0.75rem);
+    height: 0.875rem + 0.75rem + 0.75rem;
+    background-color: var(--color-footer-gray-500);
+    cursor: pointer;
+    &:hover{
+        background-color: var(--color-footer-gray-300);
+        transition: background-color 200ms ease-out, color 200ms ease-out;
+    }
+    svg{
+        width: 60%;
+        height: auto;
+    }
+    
+}
+
