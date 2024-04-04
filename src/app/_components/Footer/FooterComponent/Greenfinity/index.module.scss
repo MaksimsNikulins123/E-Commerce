@@ -1,0 +1,46 @@
+@use '../../../../_css/queries.scss' as *;
+
+.greenfinity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-footer-blue-500);
+    padding: 10px;
+}
+.buttonContainer{
+    position: relative;
+   
+}
+.button {
+    background: none;
+    border: none;
+    width: 360px;
+    // text-align: left;
+    
+    
+    span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        svg{
+            
+            width: 100%;
+            height: auto;
+            fill: white;
+        }
+        @include mid-break {
+            width: var(--gutter-h);
+        }
+    }
+    p {
+        // height: 36px;
+       margin-left: 36px; 
+       font-size: 0.75rem;
+       color: white;
+    }
+    
+    @include extra-small-break {
+        width: 100%;
+            }
+}

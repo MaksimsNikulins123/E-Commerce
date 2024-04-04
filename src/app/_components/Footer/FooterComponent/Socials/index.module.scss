@@ -1,0 +1,23 @@
+@use '../../../../_css/queries.scss' as *;
+
+
+.socialLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    a{
+       img{
+        filter: invert(100%);
+        
+        &:hover{
+            filter: invert(50%);
+        }
+       } 
+
+    }
+    @include  mid-break {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

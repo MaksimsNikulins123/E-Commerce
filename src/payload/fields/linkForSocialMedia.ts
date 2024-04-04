@@ -25,12 +25,12 @@ type LinkType = (options?: {
   overrides?: Record<string, unknown>
 }) => Field
 
-const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = {}) => {
+const linkForSocialMedia: LinkType = ({ appearances, disableLabel = false, overrides = {} } = {}) => {
   const linkResult: Field = {
-    name: 'link',
+    name: 'linkForSocialMedia',
     type: 'group',
     admin: {
-      hideGutter: false,
+      hideGutter: true,
     },
     fields: [
       {
@@ -116,6 +116,12 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
             width: '50%',
           },
         },
+        {
+          name: 'icon',
+          label: 'Icon',
+          type: 'upload',
+          relationTo: 'media',
+        },
       ],
     })
   } else {
@@ -147,4 +153,4 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
   return deepMerge(linkResult, overrides)
 }
 
-export default link
+export default linkForSocialMedia

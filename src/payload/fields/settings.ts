@@ -25,74 +25,23 @@ type LinkType = (options?: {
   overrides?: Record<string, unknown>
 }) => Field
 
-const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = {}) => {
+const settings: LinkType = ({ appearances, disableLabel = false, overrides = {} } = {}) => {
   const linkResult: Field = {
-    name: 'link',
+    name: 'settings',
     type: 'group',
     admin: {
-      hideGutter: false,
+      hideGutter: true,
     },
     fields: [
       {
         type: 'row',
-        fields: [
-          {
-            name: 'type',
-            type: 'radio',
-            options: [
-              {
-                label: 'Internal link',
-                value: 'reference',
-              },
-              {
-                label: 'Custom URL',
-                value: 'custom',
-              },
-            ],
-            defaultValue: 'reference',
-            admin: {
-              layout: 'horizontal',
-              width: '50%',
-            },
-          },
-          {
-            name: 'newTab',
-            label: 'Open in new tab',
-            type: 'checkbox',
-            admin: {
-              width: '50%',
-              style: {
-                alignSelf: 'flex-end',
-              },
-            },
-          },
-        ],
+        fields: [],
+        
       },
     ],
   }
 
-  const linkTypes: Field[] = [
-    {
-      name: 'reference',
-      label: 'Document to link to',
-      type: 'relationship',
-      relationTo: ['pages'],
-      required: true,
-      maxDepth: 1,
-      admin: {
-        condition: (_, siblingData) => siblingData?.type === 'reference',
-      },
-    },
-    {
-      name: 'url',
-      label: 'Custom URL',
-      type: 'text',
-      required: true,
-      admin: {
-        condition: (_, siblingData) => siblingData?.type === 'custom',
-      },
-    },
-  ]
+  const linkTypes: Field[] = []
 
   if (!disableLabel) {
     linkTypes.map(linkType => ({
@@ -111,12 +60,56 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
           name: 'label',
           label: 'Label',
           type: 'text',
+          required: false,
+          admin: {
+            width: '100%',
+            hidden: true,
+          },
+        },
+        {
+          name: 'icon',
+          label: 'Icon',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            width: '40%',
+          },
+        },
+        {
+          name: 'currency',
+          label: 'Currency',
+          type: 'text',
           required: true,
+          admin: {
+            width: '20%',
+          },
+        },
+        {
+          name: 'languages',
+          label: 'languages',
+          type: 'array',
+          required: true,
+          fields: [
+            {
+              name: 'country',
+              label: 'Country',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'language',
+              type: 'text',
+              required: true,
+            },
+            
+
+          ],
           admin: {
             width: '50%',
           },
         },
       ],
+
     })
   } else {
     linkResult.fields = [...linkResult.fields, ...linkTypes]
@@ -147,4 +140,4 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
   return deepMerge(linkResult, overrides)
 }
 
-export default link
+export default settings

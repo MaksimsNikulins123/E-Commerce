@@ -52,7 +52,6 @@ export interface Page {
             } | null;
             url?: string | null;
             label: string;
-            icon?: string | Media | null;
             appearance?: ('default' | 'primary' | 'secondary') | null;
           };
           id?: string | null;
@@ -77,7 +76,6 @@ export interface Page {
                 } | null;
                 url?: string | null;
                 label: string;
-                icon?: string | Media | null;
                 appearance?: ('primary' | 'secondary') | null;
               };
               id?: string | null;
@@ -105,7 +103,6 @@ export interface Page {
                 } | null;
                 url?: string | null;
                 label: string;
-                icon?: string | Media | null;
                 appearance?: ('default' | 'primary' | 'secondary') | null;
               };
               id?: string | null;
@@ -213,7 +210,6 @@ export interface Product {
                 } | null;
                 url?: string | null;
                 label: string;
-                icon?: string | Media | null;
                 appearance?: ('primary' | 'secondary') | null;
               };
               id?: string | null;
@@ -241,7 +237,6 @@ export interface Product {
                 } | null;
                 url?: string | null;
                 label: string;
-                icon?: string | Media | null;
                 appearance?: ('default' | 'primary' | 'secondary') | null;
               };
               id?: string | null;
@@ -306,7 +301,6 @@ export interface Product {
                     } | null;
                     url?: string | null;
                     label: string;
-                    icon?: string | Media | null;
                     appearance?: ('primary' | 'secondary') | null;
                   };
                   id?: string | null;
@@ -334,7 +328,6 @@ export interface Product {
                     } | null;
                     url?: string | null;
                     label: string;
-                    icon?: string | Media | null;
                     appearance?: ('default' | 'primary' | 'secondary') | null;
                   };
                   id?: string | null;
@@ -493,7 +486,6 @@ export interface Header {
           } | null;
           url?: string | null;
           label: string;
-          icon?: string | Media | null;
         };
         id?: string | null;
       }[]
@@ -504,9 +496,8 @@ export interface Header {
 export interface Footer {
   id: string;
   subscribe: string;
-  impactMessage: string;
-  copyright: string;
-  navItems?:
+  greenfinity: string;
+  shopNavItems?:
     | {
         link: {
           type?: ('reference' | 'custom') | null;
@@ -517,7 +508,98 @@ export interface Footer {
           } | null;
           url?: string | null;
           label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  sellNavItems?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  aboutNavItems?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  helpNavItems?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  socialMedia?:
+    | {
+        linkForSocialMedia: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
           icon?: string | Media | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  locationSettings?:
+    | {
+        settings: {
+          label?: string | null;
+          icon?: string | Media | null;
+          currency: string;
+          languages: {
+            country: string;
+            language: string;
+            id?: string | null;
+          }[];
+        };
+        id?: string | null;
+      }[]
+    | null;
+  copyright: string;
+  additionalLinks?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
         };
         id?: string | null;
       }[]

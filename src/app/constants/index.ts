@@ -59,14 +59,72 @@ export const inclusions = [
 
 //FOOTER__________________________________________________________________
 
+
+
+const footer = {
+    subscribe: 'Yes! Send me exclusive offers, unique gift ideas, and personalized tips for shopping and selling on Mersy.',
+    greenfinity: 'Mersy is powered by 100% renewable electricity.',
+    shopNavItems: [],
+    sellNavItems: [],
+    aboutNavItems: [],
+    helpNavItems: [],
+    socialMedia: [],
+    locationSettings: [],
+    copyright: '© 2024 Mersy, Inc.',
+    additionalLinks: []
+  }
+
+
 export const footerSubscribe = [
   { 
-    name: 'subscribe',
-    label: 'Subscribe',
-    type: 'text',
-    required: true
+    subscribe: 'Yes! Send me exclusive offers, unique gift ideas, and personalized tips for shopping and selling on Mersy.'
   }
 ]
+export const footerGreenfinity = [
+  { 
+    greenfinity: 'Mersy is powered by 100% renewable electricity.'
+  }
+]
+export const footerAppDownload = [
+    {
+        "link": {
+            "label": "Download the Mersy App",
+            "type": "reference",
+            "newTab": true,
+            "url": "/pages/mobile",
+            "icon": {
+                "url": "http://localhost:3000/media/craft-stapler-tool.svg"
+            },
+            "reference": {
+                "relationTo": "pages",
+                "value": {
+                    "slug": "mobile"
+                }
+            }
+        }
+    }
+]
+
+export const footerLocationSettings = [
+  {
+    country: 'United States of America',
+    language: 'English (US)',
+    currency: '$ (USD)',
+    icon: {
+      url: 'http://localhost:3000/media/usa-flag-1'
+    },
+  }
+]
+export const footerNavItems = [
+  {
+
+  }
+]
+
+
+
+
+
 
 export const footerImpactMessage = [
   { 

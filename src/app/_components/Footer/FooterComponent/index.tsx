@@ -1,110 +1,79 @@
 'use client'
 
-import React from 'react'
-
-// import { usePathname } from 'next/navigation'
-// import Image from 'next/image'
-// import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 
 import { Gutter } from '../../Gutter'
-// import { Button } from '../../Button'
-// import FooterForm from './FooterForm'
-// import FooterContent from './FooterContent'
-// import FooterText from './FooterText'
 
-// import { footerImpactMessage, footerMenu, footerProducts, noHeaderFooterUrls } from '../../../constants'
+import { Footer } from '../../../../payload/payload-types'
 
-import { Footer, Media } from '../../../../payload/payload-types'
 
-// import LogoIcon from "../../../../../public/piku.svg"
-
-// import classes from './index.module.scss'
 import Subscribe from './Subscribe'
+import Greenfinity from './Greenfinity'
+import NavigationFooter from './NavigationFooter'
+
+
+
+import FooterApp from './FooterApp'
+
+
+import classes from './index.module.scss'
+import SocialMedia from './Socials'
+import BurgerMenu from '../../BurgerMenu'
+import LocationSettings from './LocationSettings'
+import Copyright from './Copyright'
+import AdditionalLinks from './AdditionalLinks'
+
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
 
- 
-  // const pathname = usePathname()
-  // const navItems = footer?.navItems || []
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 400); // Adjust breakpoint as needed
+    };
+
+    handleResize(); // Check initial screen width
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+
   return (
-    // <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
-    <footer>
+    <footer className={classes.footer}>
       <Gutter>
-        <Subscribe content={footer.subscribe}/>
-        <div>100% renewable electricity block</div>
-        <div>
-          <div>Nvigation block</div>
-          <div>App download block</div>
+        <Subscribe content={footer.subscribe} />
+        <Greenfinity content={footer.greenfinity} />
+        <div className={classes.extraLinks}>
+          <FooterApp />
+          {
+            isMobile
+              ?
+              <BurgerMenu
+                shopNavItems={footer.shopNavItems}
+                sellNavItems={footer.sellNavItems}
+                aboutNavItems={footer.aboutNavItems}
+                helpNavItems={footer.helpNavItems}
+              />
+              :
+              <NavigationFooter
+                shopNavItems={footer.shopNavItems}
+                sellNavItems={footer.sellNavItems}
+                aboutNavItems={footer.aboutNavItems}
+                helpNavItems={footer.helpNavItems}
+              />
+          }
+          <SocialMedia socialMedia={footer.socialMedia} />
         </div>
-        <div>
-            <div>Location settings block</div>
-            <div>
-              <span>Copyright block</span>
-              <div>Links block</div>
-            </div>
-        </div>
-        {/* <div className={classes.footer}>
-          <div className={classes.container}>
-            <div className={classes.wrapper}>
-              <div className={classes.blockList}>
-                <div className={classes.newsletters}>
-                  <LogoIcon />
-                  <FooterForm />
-                </div>
-                <div className={classes.menu}>
-                  <FooterContent title="MENU" content={footerMenu} />
-                </div>
-                <div className={classes.menu}>
-                  <FooterContent title="PRODUCTS" content={footerProducts} />
-                </div>
-                <div className={classes.text}>
-                  <FooterText  title="About" content={footer.impactMessage} />
-                </div>
-              </div>
-              <div className={classes.aside}>
-                <Gutter>
-                  <div className={classes.wrap}>
-                    <Link
-                      href='/'
-                    >
-                      <Image
-                        src='/logo-white.svg'
-                        alt='logo'
-                        width={170}
-                        height={50}
-                      />
-                    </Link>
-                    <p>{footer.copyright}</p>
-                    <div className={classes.socialLinks}>
-                      {navItems.map(item => {
-                        const icon = item?.link?.icon as Media;
 
-                        return (
-                          <Button
-                            key={item.link.label}
-                            el='link'
-                            href={item.link.url}
-                            newTab={true}
-                            className={classes.socialLinkItem}
-
-                          >
-                            <Image
-                              src={icon?.url}
-                              alt={item.link.label}
-                              width={24}
-                              height={24}
-                              className={classes.socialIcon}
-                            />
-                          </Button>
-                        )
-                      })}
-                    </div>
-                  </div>
-                </Gutter>
-              </div>
-            </div>
+        <div className={classes.footerBottom}>
+          <div className={classes.footerBottomContainer}>
+            <LocationSettings locationSettings={footer.locationSettings}/>
+            <Copyright copyright={footer.copyright} />
+            <AdditionalLinks additionalLinks={footer.additionalLinks}/>
           </div>
-        </div> */}
+        </div>
       </Gutter>
     </footer>
   )

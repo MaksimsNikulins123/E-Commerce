@@ -1,0 +1,52 @@
+@use '../../../../_css/queries.scss' as *;
+
+.nav{
+    padding: 36px;
+    padding-bottom: 24px;
+    flex: 2;
+}
+.navContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.navWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    @include extra-small-break {
+        display: block;
+        
+    }
+}
+.menuBurger {
+    display: none;
+}
+.navItem{
+    text-align:center;
+    // display: flex;
+    // align-items: center;
+    h3{
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: .08px;
+        margin-bottom: 12px;
+    }
+
+    @include small-break {
+        padding-bottom: 20px;
+    }
+    
+}
+.extraLinks {
+    visibility: visible;
+    max-height: none;
+    overflow: visible;
+
+    a{
+        color: var(--color-footer-white-500);
+        &:hover {
+            color: grey;
+        }
+    }
+}

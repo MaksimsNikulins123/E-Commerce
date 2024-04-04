@@ -1,7 +1,7 @@
 @use '../../../../_css/queries.scss' as *;
 
 .subscribe {
-    background: var(--color-footer-blue-500);
+    background: var(--color-footer-blue-300);
     padding-bottom: 18px;
     text-align: center;
 }
@@ -40,43 +40,65 @@
     
    
     @include large-break {
-        width: 300px;
+        width: 350px;
             }
             @include mid-break {
-                width: 250px;
+                width: 300px;
                     }
                     @include small-break {
                         width: 200px;
+                        font-size: 0.6rem;
                             }
                         @include extra-small-break {
                             width: 150px;
+                            font-size: 0.5rem;
                                 }
             
   }
 
 .button {
     position: absolute;
-    top: 1px;
+    top: 0;
     right: 0;
     padding: 0;
-    border-left: 1px solid var(--color-footer-gray-300);
+    border-left: 0;
     border-top: 0;
-    border-right: 1px solid var(--color-footer-gray-500);
+    border-right:0;
     border-bottom: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: calc(40px + 0.75rem);
-    height: 0.875rem + 0.75rem + 0.75rem;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    width: 100px;
+    height: 100%;
     background-color: var(--color-footer-gray-500);
     cursor: pointer;
+
+    &:focus{
+        outline: none;
+    }
     &:hover{
-        background-color: var(--color-footer-gray-300);
-        transition: background-color 200ms ease-out, color 200ms ease-out;
+        background-color: var(--color-footer-black-500);
+        transition: background-color 1000ms ease-out, color 1000ms ease-out;
+        svg{
+            fill: white;
+        }
     }
     svg{
-        width: 60%;
+        width: 30%;
         height: auto;
     }
+
+    @include large-break {
+        width: 80px;
+            }
+            @include mid-break {
+                width: 70px;
+                    }
+                    @include small-break {
+                        width: 50px;
+                            }
+                        @include extra-small-break {
+                            width: 40px;
+                                }
     
 }
 

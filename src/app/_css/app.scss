@@ -45,13 +45,15 @@ html,
 body,
 #app {
   height: 100%;
+  overflow: auto;
 }
 
 body {
-  font-family: var(--font-nunito);
+  font-family: var(--font-p-graphik);
   margin: 0;
   padding: 0;
   color: var(--color-dark-500);
+ 
 
   // display:flex;
   // flex-flow: column;

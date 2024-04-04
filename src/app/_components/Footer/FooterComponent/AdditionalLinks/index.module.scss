@@ -1,0 +1,16 @@
+@use '../../../../_css/queries.scss' as *;
+
+
+.additionalLinks {
+    padding: 10px 24px;
+    // display: flex;
+    // justify-content: flex-end;
+    li{
+        display: inline;
+       padding: 10px;
+    }
+    a{
+        color: white;
+    }
+   
+}

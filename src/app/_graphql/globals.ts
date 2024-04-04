@@ -1,4 +1,4 @@
-import { LINK_FIELDS } from './link'
+import { LINK_FIELDS, LINK_FIELDS_LOCATION, LINK_FIELDS_SOCIAL_MEDIA } from './link'
 
 export const HEADER = `
   Header {
@@ -17,9 +17,27 @@ query Header {
 export const FOOTER = `
   Footer {
     subscribe
-    impactMessage
-    copyright
-    navItems {
+    greenfinity
+    shopNavItems {
+      link ${LINK_FIELDS({ disableAppearance: true })}
+		}
+    sellNavItems {
+      link ${LINK_FIELDS({ disableAppearance: true })}
+		}
+    aboutNavItems {
+      link ${LINK_FIELDS({ disableAppearance: true })}
+		}
+    helpNavItems {
+      link ${LINK_FIELDS({ disableAppearance: true })}
+		}
+    socialMedia {
+      linkForSocialMedia ${LINK_FIELDS_SOCIAL_MEDIA({ disableAppearance: true })}
+		}
+    locationSettings{
+      settings ${LINK_FIELDS_LOCATION({ disableAppearance: true })}
+    }
+    copyright 
+    additionalLinks {
       link ${LINK_FIELDS({ disableAppearance: true })}
 		}
   }
