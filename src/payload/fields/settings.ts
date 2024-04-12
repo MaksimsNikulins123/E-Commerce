@@ -36,7 +36,7 @@ const settings: LinkType = ({ appearances, disableLabel = false, overrides = {} 
       {
         type: 'row',
         fields: [],
-        
+
       },
     ],
   }
@@ -67,23 +67,24 @@ const settings: LinkType = ({ appearances, disableLabel = false, overrides = {} 
           },
         },
         {
+          name: 'country',
+          label: 'Country',
+          type: 'text',
+          required: true,
+          admin: {
+            width: '100%',
+          },
+        },
+        {
           name: 'icon',
           label: 'Icon',
           type: 'upload',
           relationTo: 'media',
           admin: {
-            width: '40%',
+            width: '33%',
           },
         },
-        {
-          name: 'currency',
-          label: 'Currency',
-          type: 'text',
-          required: true,
-          admin: {
-            width: '20%',
-          },
-        },
+        
         {
           name: 'languages',
           label: 'languages',
@@ -91,23 +92,28 @@ const settings: LinkType = ({ appearances, disableLabel = false, overrides = {} 
           required: true,
           fields: [
             {
-              name: 'country',
-              label: 'Country',
-              type: 'text',
-              required: true,
-            },
-            {
               name: 'language',
               type: 'text',
               required: true,
             },
-            
+
 
           ],
-          admin: {
-            width: '50%',
-          },
         },
+        {
+          name: 'currencies',
+          label: 'currencies',
+          type: 'array',
+          required: true,
+          fields: [
+            {
+              name: 'currency',
+              label: 'Currency',
+              type: 'text',
+              required: true,
+            }]
+          },
+        
       ],
 
     })

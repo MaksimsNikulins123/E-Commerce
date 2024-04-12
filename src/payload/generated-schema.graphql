@@ -7441,9 +7441,10 @@ type Footer_LocationSettings {
 
 type Footer_LocationSettings_Settings {
   label: String
+  country: String
   icon(where: Footer_LocationSettings_Settings_Icon_where): Media
-  currency: String
   languages: [Footer_LocationSettings_Settings_Languages!]!
+  currencies: [Footer_LocationSettings_Settings_Currencies!]!
 }
 
 input Footer_LocationSettings_Settings_Icon_where {
@@ -7609,8 +7610,12 @@ input Footer_LocationSettings_Settings_Icon_where_or {
 }
 
 type Footer_LocationSettings_Settings_Languages {
-  country: String!
   language: String!
+  id: String
+}
+
+type Footer_LocationSettings_Settings_Currencies {
+  currency: String!
   id: String
 }
 
@@ -8784,9 +8789,10 @@ type FooterDocAccessFields_locationSettings_settings_Delete {
 
 type FooterDocAccessFields_locationSettings_settings_Fields {
   label: FooterDocAccessFields_locationSettings_settings_label
+  country: FooterDocAccessFields_locationSettings_settings_country
   icon: FooterDocAccessFields_locationSettings_settings_icon
-  currency: FooterDocAccessFields_locationSettings_settings_currency
   languages: FooterDocAccessFields_locationSettings_settings_languages
+  currencies: FooterDocAccessFields_locationSettings_settings_currencies
 }
 
 type FooterDocAccessFields_locationSettings_settings_label {
@@ -8812,6 +8818,29 @@ type FooterDocAccessFields_locationSettings_settings_label_Delete {
   permission: Boolean!
 }
 
+type FooterDocAccessFields_locationSettings_settings_country {
+  create: FooterDocAccessFields_locationSettings_settings_country_Create
+  read: FooterDocAccessFields_locationSettings_settings_country_Read
+  update: FooterDocAccessFields_locationSettings_settings_country_Update
+  delete: FooterDocAccessFields_locationSettings_settings_country_Delete
+}
+
+type FooterDocAccessFields_locationSettings_settings_country_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_country_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_country_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_country_Delete {
+  permission: Boolean!
+}
+
 type FooterDocAccessFields_locationSettings_settings_icon {
   create: FooterDocAccessFields_locationSettings_settings_icon_Create
   read: FooterDocAccessFields_locationSettings_settings_icon_Read
@@ -8832,29 +8861,6 @@ type FooterDocAccessFields_locationSettings_settings_icon_Update {
 }
 
 type FooterDocAccessFields_locationSettings_settings_icon_Delete {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_currency {
-  create: FooterDocAccessFields_locationSettings_settings_currency_Create
-  read: FooterDocAccessFields_locationSettings_settings_currency_Read
-  update: FooterDocAccessFields_locationSettings_settings_currency_Update
-  delete: FooterDocAccessFields_locationSettings_settings_currency_Delete
-}
-
-type FooterDocAccessFields_locationSettings_settings_currency_Create {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_currency_Read {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_currency_Update {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_currency_Delete {
   permission: Boolean!
 }
 
@@ -8883,32 +8889,8 @@ type FooterDocAccessFields_locationSettings_settings_languages_Delete {
 }
 
 type FooterDocAccessFields_locationSettings_settings_languages_Fields {
-  country: FooterDocAccessFields_locationSettings_settings_languages_country
   language: FooterDocAccessFields_locationSettings_settings_languages_language
   id: FooterDocAccessFields_locationSettings_settings_languages_id
-}
-
-type FooterDocAccessFields_locationSettings_settings_languages_country {
-  create: FooterDocAccessFields_locationSettings_settings_languages_country_Create
-  read: FooterDocAccessFields_locationSettings_settings_languages_country_Read
-  update: FooterDocAccessFields_locationSettings_settings_languages_country_Update
-  delete: FooterDocAccessFields_locationSettings_settings_languages_country_Delete
-}
-
-type FooterDocAccessFields_locationSettings_settings_languages_country_Create {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_languages_country_Read {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_languages_country_Update {
-  permission: Boolean!
-}
-
-type FooterDocAccessFields_locationSettings_settings_languages_country_Delete {
-  permission: Boolean!
 }
 
 type FooterDocAccessFields_locationSettings_settings_languages_language {
@@ -8954,6 +8936,81 @@ type FooterDocAccessFields_locationSettings_settings_languages_id_Update {
 }
 
 type FooterDocAccessFields_locationSettings_settings_languages_id_Delete {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies {
+  create: FooterDocAccessFields_locationSettings_settings_currencies_Create
+  read: FooterDocAccessFields_locationSettings_settings_currencies_Read
+  update: FooterDocAccessFields_locationSettings_settings_currencies_Update
+  delete: FooterDocAccessFields_locationSettings_settings_currencies_Delete
+  fields: FooterDocAccessFields_locationSettings_settings_currencies_Fields
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_Delete {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_Fields {
+  currency: FooterDocAccessFields_locationSettings_settings_currencies_currency
+  id: FooterDocAccessFields_locationSettings_settings_currencies_id
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_currency {
+  create: FooterDocAccessFields_locationSettings_settings_currencies_currency_Create
+  read: FooterDocAccessFields_locationSettings_settings_currencies_currency_Read
+  update: FooterDocAccessFields_locationSettings_settings_currencies_currency_Update
+  delete: FooterDocAccessFields_locationSettings_settings_currencies_currency_Delete
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_currency_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_currency_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_currency_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_currency_Delete {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_id {
+  create: FooterDocAccessFields_locationSettings_settings_currencies_id_Create
+  read: FooterDocAccessFields_locationSettings_settings_currencies_id_Read
+  update: FooterDocAccessFields_locationSettings_settings_currencies_id_Update
+  delete: FooterDocAccessFields_locationSettings_settings_currencies_id_Delete
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_id_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_id_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_id_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_locationSettings_settings_currencies_id_Delete {
   permission: Boolean!
 }
 
@@ -13526,9 +13583,10 @@ type FooterFields_locationSettings_settings_Delete {
 
 type FooterFields_locationSettings_settings_Fields {
   label: FooterFields_locationSettings_settings_label
+  country: FooterFields_locationSettings_settings_country
   icon: FooterFields_locationSettings_settings_icon
-  currency: FooterFields_locationSettings_settings_currency
   languages: FooterFields_locationSettings_settings_languages
+  currencies: FooterFields_locationSettings_settings_currencies
 }
 
 type FooterFields_locationSettings_settings_label {
@@ -13554,6 +13612,29 @@ type FooterFields_locationSettings_settings_label_Delete {
   permission: Boolean!
 }
 
+type FooterFields_locationSettings_settings_country {
+  create: FooterFields_locationSettings_settings_country_Create
+  read: FooterFields_locationSettings_settings_country_Read
+  update: FooterFields_locationSettings_settings_country_Update
+  delete: FooterFields_locationSettings_settings_country_Delete
+}
+
+type FooterFields_locationSettings_settings_country_Create {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_country_Read {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_country_Update {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_country_Delete {
+  permission: Boolean!
+}
+
 type FooterFields_locationSettings_settings_icon {
   create: FooterFields_locationSettings_settings_icon_Create
   read: FooterFields_locationSettings_settings_icon_Read
@@ -13574,29 +13655,6 @@ type FooterFields_locationSettings_settings_icon_Update {
 }
 
 type FooterFields_locationSettings_settings_icon_Delete {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_currency {
-  create: FooterFields_locationSettings_settings_currency_Create
-  read: FooterFields_locationSettings_settings_currency_Read
-  update: FooterFields_locationSettings_settings_currency_Update
-  delete: FooterFields_locationSettings_settings_currency_Delete
-}
-
-type FooterFields_locationSettings_settings_currency_Create {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_currency_Read {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_currency_Update {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_currency_Delete {
   permission: Boolean!
 }
 
@@ -13625,32 +13683,8 @@ type FooterFields_locationSettings_settings_languages_Delete {
 }
 
 type FooterFields_locationSettings_settings_languages_Fields {
-  country: FooterFields_locationSettings_settings_languages_country
   language: FooterFields_locationSettings_settings_languages_language
   id: FooterFields_locationSettings_settings_languages_id
-}
-
-type FooterFields_locationSettings_settings_languages_country {
-  create: FooterFields_locationSettings_settings_languages_country_Create
-  read: FooterFields_locationSettings_settings_languages_country_Read
-  update: FooterFields_locationSettings_settings_languages_country_Update
-  delete: FooterFields_locationSettings_settings_languages_country_Delete
-}
-
-type FooterFields_locationSettings_settings_languages_country_Create {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_languages_country_Read {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_languages_country_Update {
-  permission: Boolean!
-}
-
-type FooterFields_locationSettings_settings_languages_country_Delete {
-  permission: Boolean!
 }
 
 type FooterFields_locationSettings_settings_languages_language {
@@ -13696,6 +13730,81 @@ type FooterFields_locationSettings_settings_languages_id_Update {
 }
 
 type FooterFields_locationSettings_settings_languages_id_Delete {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies {
+  create: FooterFields_locationSettings_settings_currencies_Create
+  read: FooterFields_locationSettings_settings_currencies_Read
+  update: FooterFields_locationSettings_settings_currencies_Update
+  delete: FooterFields_locationSettings_settings_currencies_Delete
+  fields: FooterFields_locationSettings_settings_currencies_Fields
+}
+
+type FooterFields_locationSettings_settings_currencies_Create {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_Read {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_Update {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_Delete {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_Fields {
+  currency: FooterFields_locationSettings_settings_currencies_currency
+  id: FooterFields_locationSettings_settings_currencies_id
+}
+
+type FooterFields_locationSettings_settings_currencies_currency {
+  create: FooterFields_locationSettings_settings_currencies_currency_Create
+  read: FooterFields_locationSettings_settings_currencies_currency_Read
+  update: FooterFields_locationSettings_settings_currencies_currency_Update
+  delete: FooterFields_locationSettings_settings_currencies_currency_Delete
+}
+
+type FooterFields_locationSettings_settings_currencies_currency_Create {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_currency_Read {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_currency_Update {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_currency_Delete {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_id {
+  create: FooterFields_locationSettings_settings_currencies_id_Create
+  read: FooterFields_locationSettings_settings_currencies_id_Read
+  update: FooterFields_locationSettings_settings_currencies_id_Update
+  delete: FooterFields_locationSettings_settings_currencies_id_Delete
+}
+
+type FooterFields_locationSettings_settings_currencies_id_Create {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_id_Read {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_id_Update {
+  permission: Boolean!
+}
+
+type FooterFields_locationSettings_settings_currencies_id_Delete {
   permission: Boolean!
 }
 
@@ -14658,14 +14767,19 @@ input mutationFooter_LocationSettingsInput {
 
 input mutationFooter_LocationSettings_SettingsInput {
   label: String
+  country: String!
   icon: String
-  currency: String!
   languages: [mutationFooter_LocationSettings_Settings_LanguagesInput!]
+  currencies: [mutationFooter_LocationSettings_Settings_CurrenciesInput!]
 }
 
 input mutationFooter_LocationSettings_Settings_LanguagesInput {
-  country: String!
   language: String!
+  id: String
+}
+
+input mutationFooter_LocationSettings_Settings_CurrenciesInput {
+  currency: String!
   id: String
 }
 

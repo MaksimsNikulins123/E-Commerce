@@ -21,14 +21,17 @@ export const LINK_FIELDS = ({ disableAppearance, disableLabel }: Args = {}): str
 export const LINK_FIELDS_LOCATION = ({ disableAppearance, disableLabel }: Args = {}): string => `{
   ${!disableLabel ? 'label' : ''}
   ${!disableAppearance ? 'appearance' : ''}
+  country
   icon {
     url
   }
-  currency
   languages {
-    country
     language
   }
+  currencies {
+    currency
+  }
+  
   
 }`
 export const LINK_FIELDS_SOCIAL_MEDIA = ({ disableAppearance, disableLabel }: Args = {}): string => `{

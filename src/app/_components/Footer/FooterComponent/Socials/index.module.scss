@@ -4,8 +4,9 @@
 .socialLinks {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 10px;
+    justify-content: flex-start;
+    // padding: 10px;
+    padding: 36px;
     a{
        img{
         filter: invert(100%);
@@ -19,5 +20,6 @@
     @include  mid-break {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
 }

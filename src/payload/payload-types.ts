@@ -577,11 +577,14 @@ export interface Footer {
     | {
         settings: {
           label?: string | null;
+          country: string;
           icon?: string | Media | null;
-          currency: string;
           languages: {
-            country: string;
             language: string;
+            id?: string | null;
+          }[];
+          currencies: {
+            currency: string;
             id?: string | null;
           }[];
         };
