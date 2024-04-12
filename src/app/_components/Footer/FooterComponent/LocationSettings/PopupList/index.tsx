@@ -20,6 +20,7 @@ const PopupList = ({ closePopupWindow, locationSettings, buttonValue, handleButt
         setSelectedCountry(selectedCountry)
         getCountriesList(selectedCountry)
         getLanguagesList(selectedCountry, selectedLanguage)
+        getCurrenciesList(selectedCountry, selectedCurrency)
         getCountryFlagIcon(selectedCountry)
 
     };
@@ -125,16 +126,13 @@ const PopupList = ({ closePopupWindow, locationSettings, buttonValue, handleButt
                 <div className={classes.popupHeader}>
                     <h2>Update your settings</h2>
                 </div>
-                <form>
+                <form className={classes.form}>
                     <p>
-                        Set where you live, what language you speak and the currency you use.
-                        <a href='/'>Learn more.</a>
+                        Set where you live, what language you speak and the currency you use. <a href='/'>Learn more.</a>
                     </p>
-                    <div>
-                        <div>
-                            <label>Region</label>
-                        </div>
-                        <div>
+                    <div className={classes.selectBlock}>
+                        <label>Region</label>
+                        <div className={classes.select}>
                             <select onChange={handleChangeCountry}>
                                 <optgroup label="Selected country">
 
@@ -157,11 +155,9 @@ const PopupList = ({ closePopupWindow, locationSettings, buttonValue, handleButt
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            <label>Language</label>
-                        </div>
-                        <div>
+                    <div className={classes.selectBlock}>
+                        <label>Language</label>
+                        <div className={classes.select}>
                             <select onChange={handleChangeLanguage}>
                                 <optgroup label="Selected language">
                                     <option
@@ -182,11 +178,9 @@ const PopupList = ({ closePopupWindow, locationSettings, buttonValue, handleButt
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            <label>Currency</label>
-                        </div>
-                        <div>
+                    <div className={classes.selectBlock}>
+                        <label>Currency</label>
+                        <div className={classes.select}>
                             <select
                                 onChange={handleChangeCurrency}
                             >
@@ -209,8 +203,11 @@ const PopupList = ({ closePopupWindow, locationSettings, buttonValue, handleButt
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <button type='button' onClick={handleSubmitForm}>Save</button>
+                    <div className={classes.formButtonBlock}>
+                        <div className={classes.buttons}>
+                            <button type='button' onClick={closePopupWindow}>Cancel</button>
+                            <button type='button' onClick={handleSubmitForm}>Save</button>
+                        </div>
                     </div>
                 </form>
             </div>
